@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize')
-const db = require('../db')
+const sequelize = require('../database')
 
 class Language extends Model {}
 
@@ -22,7 +22,7 @@ Language.init(
     }
   },
   {
-    db,
+    sequelize,
     modelName: 'language'
   }
 )
