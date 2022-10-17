@@ -1,7 +1,7 @@
 const express = require('express')
 const Language = require('./Language')
 const LanguageService = require('./LanguageService')
-const router = express.router()
+const router = express.Router()
 
 router.post('/languages', async (req, res) => {
   try {
@@ -44,7 +44,7 @@ router.get('/languages/:id', async (req, res) => {
 
 router.put('/languages/:id', async (req, res) => {
   const id = req.params.id
-  const language = await LanguageService.getOne(id)
+  const language = await Language.findOne({ where: { id: id } })
   language = req.body
   await language.save()
   res.send({
@@ -59,3 +59,5 @@ router.delete('/user/:id', async (req, res) => {
     success: true
   })
 })
+
+module.exports = router
