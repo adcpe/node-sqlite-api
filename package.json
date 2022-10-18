@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
+  "private": true,
   "workspaces": [
     "client",
     "server"
-  ]
+  ],
+  "scripts": {
+    "start": "concurrently \"npm start --workspace=server\" \"npm start --workspace=client\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
 }
