@@ -1,23 +1,22 @@
-import logo from './logo.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Container } from '@mui/material'
+import Languages from './components/Languages'
 
 function App() {
+  const [languages, setLanguages] = useState([])
+
+  useEffect(() => {
+    axios('/languages').then((res) => {
+      setLanguages(res.data)
+    })
+  }, [])
+
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+      <Container maxWidth='md'>
+        <Languages languages={languages} />
+      </Container>
     </div>
   )
 }
