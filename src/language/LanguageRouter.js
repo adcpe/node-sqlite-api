@@ -32,7 +32,8 @@ router.get('/languages', async (req, res) => {
 
 router.get('/languages/:id', async (req, res) => {
   try {
-    const language = await LanguageService.getOne(req.params.id)
+    const id = req.params.id
+    const language = await LanguageService.getOne(id)
     res.send(language)
   } catch (error) {
     res.send({
@@ -43,21 +44,35 @@ router.get('/languages/:id', async (req, res) => {
 })
 
 router.put('/languages/:id', async (req, res) => {
-  const id = req.params.id
-  const language = await Language.findOne({ where: { id: id } })
-  language = req.body
-  await language.save()
-  res.send({
-    success: true
-  })
+  try {
+    const id = req.params.id
+    await Language.update(req.body, { where: { id: id } })
+    const { dataValues } = await LanguageService.getOne(id)
+    res.send({
+      data: dataValues,
+      success: true
+    })
+  } catch (error) {
+    res.send({
+      error: error,
+      success: false
+    })
+  }
 })
 
-router.delete('/user/:id', async (req, res) => {
-  const id = req.params.id
-  await User.destroy({ where: { id: id } })
-  res.send({
-    success: true
-  })
+router.delete('/languages/:id', async (req, res) => {
+  try {
+    const id = req.params.id
+    await Language.destroy({ where: { id: id } })
+    res.send({
+      success: true
+    })
+  } catch (error) {
+    res.send({
+      error: error,
+      success: false
+    })
+  }
 })
 
 module.exports = router
