@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Container } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import Languages from './components/Languages'
 
 function App() {
@@ -13,8 +13,11 @@ function App() {
   }, [])
 
   return (
-    <div className='App'>
+    <div className='App' style={{ background: '#E1E9E8', padding: '30px' }}>
       <Container maxWidth='md'>
+        <Typography align='center' variant='h1' gutterBottom sx={{ fontSize: 52 }}>
+          List of programming languages
+        </Typography>
         <Languages languages={languages} />
       </Container>
     </div>
