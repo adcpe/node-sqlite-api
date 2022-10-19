@@ -22,7 +22,7 @@ const LanguageCard = ({ language }) => {
             component='div'
             style={{ textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
           >
-            Creator: {language.creator}
+            Created by: {language.creator}
           </Typography>
           <Link target='_blank' rel='noopener' href={language.website}>
             Website <OpenInNewIcon sx={{ fontSize: 12 }} />
