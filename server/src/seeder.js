@@ -61,7 +61,7 @@ const seeder = [
     creator: 'Ross Ihaka, Robert Gentleman',
     year: 1993,
     website: 'https://www.r-project.org/',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg'
+    logo: 'https://www.r-project.org/logo/Rlogo.svg'
   },
   {
     name: 'Python',
@@ -118,14 +118,6 @@ const seeder = [
     year: 1995,
     website: 'https://www.java.com/en/',
     logo: 'https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg'
-  },
-  {
-    name: 'Haskell',
-    creator:
-      'Lennart Augustsson, Dave Barton, Brian Boutel, Warren Burton, Joseph Fasel, Kevin Hammond, Ralf Hinze, Paul Hudak, John Hughes, Thomas Johnsson, Mark Jones, Simon Peyton Jones, John Launchbury, Erik Meijer, John Peterson, Alastair Reid, Colin Runciman, Philip Wadler',
-    year: 1990,
-    website: 'https://www.haskell.org/',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/4/4d/Logo_of_the_Haskell_programming_language.svg'
   },
   {
     name: 'Go',
