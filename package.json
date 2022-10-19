@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "start": "concurrently \"npm run start --workspace=server\" \"npm run start --workspace=client\"",
-    "build": "concurrently \"npm run start --workspace=server\" \"npm run build --workspace=client\""
+    "build": "concurrently \"npm run build --workspace=client\" \"npm run start --workspace=server\""
   },
   "devDependencies": {
     "concurrently": "^7.4.0"
