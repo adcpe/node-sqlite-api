@@ -6,7 +6,6 @@
 2. **[Tecnologías usadas](#introducción)**
 3. **[Despliegue](#despliegue)**
 4. **[To do](#to-do)**
-5. **[Tecnologías usadas](#tecnologías-usadas)**
 
 ## Introducción
 
